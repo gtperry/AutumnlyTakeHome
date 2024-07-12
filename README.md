@@ -34,4 +34,6 @@ Using all of these local variables gave me all of the resources I needed to exec
 ## Algorithm:
 ### The algorithm I decided on to calculate the price of each individual roomsize per date was: 
 avg(average_price_of_other_hotels, (previous_dynamic_price + ((default_price * occupancy_rate_of_hotel * avg_occupancy_rate_of_other_hotels)/2) + ((default_price * 1-(days_booked_in_advanced/365)/2)))
+
+
 Then I found the historical value that had the closest roomsize, days_booked_in_advanced, occupancy_rate_of_hotel, avg_occupancy_rate_of_other_hotels, and average_price_of_other_hotels to the current attempted booking, and found the percentage of rooms booked for that night. 
