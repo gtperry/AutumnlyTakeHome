@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Price Floor and Ceilings</title>
+</head>
+<body>
+    <h1>Pick a date to search for a room</h1>
+    <form action="/submit" method="POST">
+        <label for="datetime">What date to look for a room</label>
+        <input type="date" id="datetime" name="datetime"><br><br>
+        <input type="submit" value="Look For Room">
+    </form>
+    <label for="datetime2">Currently looking at prices for: {{date_looking_at}}</label>
+        
+        
+    <table>
+        <tr>
+            <th>Room Capacity</th>
+            <th>Price</th>
+            <th>Available Rooms</th>
+
+            
+
+        </tr>
+        {% for i in range(rooms|length) %}
+        <tr>
+            <td>{{rooms[i][0]}}</td>
+            <td>{{rooms[i][1]}}</td>
+            <td>{{rooms[i][2]}}</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+    <button onclick="location.href='{{ url_for('index') }}';">Return Home</button>
+</body>
+</html>

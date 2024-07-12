@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Hotel Pricing</title>
+</head>
+<body>
+    <h1>Pick a date to search for a room</h1>
+    <form action="/submit" method="post">
+        <label for="datetime">What date to look for a room</label>
+        <input type="date" id="datetime" name="datetime"><br><br>
+        <input type="submit" value="Look For Room">
+    </form>
+    <button onclick="location.href='{{ url_for('owner') }}';">Go to editor Page</button>
+</body>
+</html>

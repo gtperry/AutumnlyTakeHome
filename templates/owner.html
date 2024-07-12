@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Price Floor and Ceilings</title>
+</head>
+<body>
+    <h1>Change price floor and ceiling for each room size</h1>
+    <form method="POST" action="/owner">
+        <label for="datetime2">What date to set the price for</label>
+        <input type="date" id="datetime2" name="datetime2"><br><br>
+        <label for="datetime2">Currently editing prices for: {{date_looking_at}}</label>
+        <input type="hidden" name="btn_identifier" value="date" />
+
+        <div>
+            <button type="submit">Change Date</button>
+        </div>
+    </form>
+    <form method="POST" action="/owner">
+        
+        
+        <table>
+            <tr>
+                <th>Room Size</th>
+                <th>Price</th>
+                <th>Manually Change Price</th>
+
+                <th>Floor</th>
+                <th>Ceiling</th>
+
+            </tr>
+            {% for i in range(values|length) %}
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{ values[i] }}</td>
+                <td><input type="text" name="price{{ i+1 }}" value=></td>
+                
+                <td><input type="text" name="floor{{ i+1 }}" value={{floors[i]}}></td>
+                <td><input type="text" name="ceiling{{ i+1 }}" value={{ceilings[i]}}></td>
+
+
+            </tr>
+            {% endfor %}
+        </table>
+        <input type="hidden" name="btn_identifier" value="fc" />
+        <div style="text-align: center;">
+            <button type="submit">Update Values</button>
+        </div>
+    </form>
+    <button onclick="location.href='{{ url_for('index') }}';">Return Home</button>
+</body>
+</html>

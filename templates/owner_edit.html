@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Price Floor and Ceilings</title>
+</head>
+<body>
+    <h1>Change price floor and ceiling for each room size</h1>
+    <form method="POST" action="/">
+        <table>
+            <tr>
+                <th>Value</th>
+                <th>Input</th>
+            </tr>
+            {% for i in range(values|length) %}
+            <tr>
+                <td>{{ values[i] }}</td>
+                <td><input type="text" name="input{{ i+1 }}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div style="text-align: center;">
+            <button type="submit">Update Values</button>
+        </div>
+    </form>
+</body>
+</html>
